@@ -4,8 +4,9 @@ var ReactBootstrap = require('react-bootstrap');
 // Object destructuring this will make Route,Router,IndexRoute,hashHistory will be set to react-router
 var { Route, Router, IndexRoute, hashHistory} = require('react-router');
 var Main = require('Main');
-
-
+var Countdown = require('Countdown')
+var Navigation = require('Navigation')
+var Timer = require('Timer')
 // Load foundation
 require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css')
 $(document).foundation();
@@ -23,7 +24,10 @@ var RoutingFunc = React.createClass({
       <Router history={hashHistory}>
 
         <Route path="/" component = {Main}>
+          <Route path="/Countdown" component = {Countdown}/>
+          <IndexRoute component = {Timer}/>
         </Route>
+        <Route path="/Navigation" component = {Navigation}></Route>
       </Router>
     )
   }
