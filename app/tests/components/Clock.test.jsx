@@ -38,21 +38,21 @@ describe('Clock', () => {
       var seconds = 600;
       var expected = '10:00';
       var actual = clock.formatSeconds(seconds);
-
       expect(actual).toBe(expected);
     });
+    // this will test if you have less than 10 number which will be error so you need to adjust things on clock.jsx
+    // the things done in the test above applies most here
+
+      it('should format seconds when min/sec less than 10', () => {
+        var clock = TestUtils.renderIntoDocument(<Clock/>);
+        var seconds = 61;
+        var expected = '01:01';
+        var actual = clock.formatSeconds(seconds);
+
+        expect(actual).toBe(expected);
+      });
   });
 
-// this will test if you have less than 10 number which will be error so you need to adjust things on clock.jsx
-// the things done in the test above applies most here
 
-  it('should format seconds when min/sec less than 10', () => {
-    var clock = TestUtils.renderIntoDocument(<Clock/>);
-    var seconds = 61;
-    var expected = '01:01';
-    var actual = clock.formatSeconds(seconds);
-
-    expect(actual).toBe(expected);
-  });
 
 });
