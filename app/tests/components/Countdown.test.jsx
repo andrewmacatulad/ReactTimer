@@ -21,8 +21,9 @@ describe('Countdown', () => {
 
         setTimeout(() => {
           expect(countdown.state.count).toBe(19);
-          done();
+          done()
         }, 1001)
+
       });
       it('should stopped at 0', () => {
         var countdowncheck = TestUtils.renderIntoDocument(<Countdown/>);
